@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_tamam_pos_receipt" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.tamam.pos.receipt</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='pos_bills_and_receipts_section']/setting[field[@name='pos_is_header_or_footer']]" position="after">
+                <setting string="Till Number" help="Print a POS-specific till number above the footer message on the receipt.">
+                    <field name="pos_till_number" placeholder="e.g. 5693612"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
