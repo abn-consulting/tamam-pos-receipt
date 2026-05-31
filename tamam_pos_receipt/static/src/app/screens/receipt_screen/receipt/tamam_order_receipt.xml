@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="tamam_pos_receipt.ReceiptHeader" t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension">
-        <xpath expr="//span[hasclass('tracking-number')]" position="replace">
-            <span class="tracking-number tamam-receipt-number">
-                Receipt no <t t-esc="order.tracking_number"/>
-            </span>
+        <xpath expr="//div[hasclass('pos-receipt-contact')]/div[span[hasclass('tracking-number')]]" position="replace">
+            <div t-if="order.tracking_number and order.config.displayTrackingNumber and !order.config.displayBigTrackingNumber"
+                 class="text-center tamam-receipt-number-block">
+                <span class="tamam-receipt-number">
+                    Receipt no <t t-esc="order.tracking_number"/>
+                </span>
+            </div>
         </xpath>
     </t>
 
@@ -31,8 +34,10 @@
     </t>
 
     <t t-name="tamam_pos_receipt.RestaurantOrderReceipt" t-inherit="pos_restaurant.OrderReceipt" t-inherit-mode="extension">
-        <xpath expr="//div[hasclass('restaurant-pro-forma-receipt')]" position="attributes">
-            <attribute name="class">restaurant-pro-forma-receipt fs-2 mb-1 text-center</attribute>
+        <xpath expr="//div[hasclass('restaurant-pro-forma-receipt')]" position="replace">
+            <div t-if="!order.finalized" class="restaurant-pro-forma-receipt tamam-pro-forma-receipt">
+                Pro forma receipt
+            </div>
         </xpath>
     </t>
 </templates>

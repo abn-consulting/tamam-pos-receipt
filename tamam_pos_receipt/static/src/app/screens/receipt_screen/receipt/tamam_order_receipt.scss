@@ -1,8 +1,13 @@
 .tamam-receipt-number {
     display: inline-block;
-    font-size: 1.85rem;
+    font-size: 1.1rem;
     font-weight: 400;
     line-height: 1.15;
+}
+
+.tamam-receipt-number-block {
+    width: 100%;
+    text-align: center;
 }
 
 .tamam-till-number {
@@ -17,4 +22,10 @@
 
 .tamam-pos-name {
     font-size: 0.85rem;
+}
+
+.tamam-pro-forma-receipt {
+    display: block;
+    width: 100%;
+    text-align: center;
 }

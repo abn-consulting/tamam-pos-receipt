@@ -1,7 +1,7 @@
 {
     "name": "Tamam POS Receipt",
     "summary": "Customize the POS receipt layout for Tamam",
-    "version": "19.0.1.0.2",
+    "version": "19.0.1.0.3",
     "category": "Sales/Point of Sale",
     "author": "Baraka",
     "license": "LGPL-3",
