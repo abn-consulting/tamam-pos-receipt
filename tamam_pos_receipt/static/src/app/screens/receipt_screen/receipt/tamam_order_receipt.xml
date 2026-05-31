@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="tamam_pos_receipt.ReceiptHeader" t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension">
-        <xpath expr="//div[hasclass('pos-receipt-contact')]/div[span[hasclass('tracking-number')]]" position="replace">
+        <xpath expr="//div[hasclass('pos-receipt-contact')]" position="inside">
             <div t-if="order.tracking_number and order.config.displayTrackingNumber and !order.config.displayBigTrackingNumber"
                  class="text-center tamam-receipt-number-block">
                 <span class="tamam-receipt-number">

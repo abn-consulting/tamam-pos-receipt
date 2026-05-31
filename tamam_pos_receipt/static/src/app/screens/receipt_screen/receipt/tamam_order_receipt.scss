@@ -8,6 +8,11 @@
 .tamam-receipt-number-block {
     width: 100%;
     text-align: center;
+    padding-top: 0.35rem;
+}
+
+.pos-receipt .pos-receipt-contact .tracking-number {
+    display: none !important;
 }
 
 .tamam-till-number {
@@ -27,5 +32,6 @@
 .tamam-pro-forma-receipt {
     display: block;
     width: 100%;
-    text-align: center;
+    margin: 0 auto;
+    text-align: center !important;
 }
