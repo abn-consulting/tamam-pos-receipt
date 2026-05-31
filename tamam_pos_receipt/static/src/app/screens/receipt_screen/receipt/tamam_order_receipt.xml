@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="tamam_pos_receipt.ReceiptHeader" t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension">
-        <xpath expr="//div[hasclass('cashier')]/div[span[hasclass('tracking-number')]]" position="replace">
-            <div t-if="order.tracking_number and order.config?.displayTrackingNumber and !order.config?.displayBigTrackingNumber"
-                 class="text-center">
-                <span class="tamam-receipt-number">
-                    Receipt no <t t-esc="order.tracking_number"/>
-                </span>
-            </div>
+        <xpath expr="//span[hasclass('tracking-number')]" position="replace">
+            <span class="tracking-number tamam-receipt-number">
+                Receipt no <t t-esc="order.tracking_number"/>
+            </span>
         </xpath>
     </t>
 
