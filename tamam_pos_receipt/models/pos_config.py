@@ -8,9 +8,3 @@ class PosConfig(models.Model):
         string="Till Number",
         help="Till number printed on this POS receipt.",
     )
-
-    def _load_pos_data_fields(self, config):
-        fields = super()._load_pos_data_fields(config)
-        if "till_number" not in fields:
-            fields.append("till_number")
-        return fields
